@@ -1,0 +1,16 @@
+#fc p{
+	text-align:left;
+	overflow:hidden;
+}
+#fc label{
+	float:left;
+	display:block;
+	width:100px;
+	text-align:right;
+	padding-right:20px;
+}
+#fc #validate{ text-align:center;}
+#showFilter{display:none;margin:0;}
+ul#liens li{ padding:2px 0;}
+.results{ padding-right:20px; font-weight:bold;}
+#lier_panel{ height:500px;}
