@@ -1,0 +1,123 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Link To Post\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-06-11 16:05+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Julien Appert <jappert@ajcrea.com>\n"
+"Language-Team: ajcrea <jappert@ajcrea.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: French\n"
+"X-Poedit-Country: France\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Basepath: C:\\wamp\\www\\wordpress\\wp-content\\plugins\\link-to-post\n"
+"Plural-Forms: nplurals=2;plural=n>2\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-SearchPath-0: C:\\wamp\\www\\wordpress\\wp-content\\plugins\\link-to-post\n"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\link-to-post/link-to-post.php:62
+msgid "Options of \"Link to post\""
+msgstr "Options de \"Link to post\""
+
+#: C:\wamp\www\wordpress\wp-content\plugins\link-to-post/link-to-post.php:64
+msgid "Configuration"
+msgstr "Configuration"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\link-to-post/link-to-post.php:68
+msgid "Search with selected text"
+msgstr "Rechercher avec le texte sélectionné"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\link-to-post/link-to-post.php:72
+msgid "Add the nofollow attribute"
+msgstr "Ajouter l'attribut nofollow"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\link-to-post/link-to-post.php:75
+msgid "Save changes"
+msgstr "Sauvegarder les changements"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\link-to-post/tinymce/pages.php:19
+msgid "Link a page"
+msgstr "Lier une page"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\link-to-post/tinymce/pages.php:24
+#: C:\wamp\www\wordpress\wp-content\plugins\link-to-post/tinymce/posts.php:25
+msgid "Show the filters"
+msgstr "Montrer le filtre"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\link-to-post/tinymce/pages.php:26
+msgid "Filter pages"
+msgstr "Filtrer les pages"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\link-to-post/tinymce/pages.php:29
+#: C:\wamp\www\wordpress\wp-content\plugins\link-to-post/tinymce/posts.php:30
+msgid "Content:"
+msgstr "Contenu :"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\link-to-post/tinymce/pages.php:32
+#: C:\wamp\www\wordpress\wp-content\plugins\link-to-post/tinymce/posts.php:33
+msgid "in title"
+msgstr "dans le titre"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\link-to-post/tinymce/pages.php:33
+#: C:\wamp\www\wordpress\wp-content\plugins\link-to-post/tinymce/posts.php:34
+msgid "in content"
+msgstr "dans le contenu"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\link-to-post/tinymce/pages.php:34
+#: C:\wamp\www\wordpress\wp-content\plugins\link-to-post/tinymce/posts.php:35
+msgid "in both"
+msgstr "les deux"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\link-to-post/tinymce/pages.php:38
+#: C:\wamp\www\wordpress\wp-content\plugins\link-to-post/tinymce/posts.php:45
+msgid "Search"
+msgstr "Rechercher"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\link-to-post/tinymce/pages.php:39
+#: C:\wamp\www\wordpress\wp-content\plugins\link-to-post/tinymce/posts.php:46
+msgid "Cancel"
+msgstr "Annuler"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\link-to-post/tinymce/pages.php:40
+#: C:\wamp\www\wordpress\wp-content\plugins\link-to-post/tinymce/posts.php:47
+msgid "Hide the filters"
+msgstr "Cacher le filtre"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\link-to-post/tinymce/pages.php:54
+msgid "page"
+msgstr "page"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\link-to-post/tinymce/pages.php:57
+msgid "pages"
+msgstr "pages"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\link-to-post/tinymce/pages.php:170
+msgid "No page"
+msgstr "Aucune page"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\link-to-post/tinymce/posts.php:20
+msgid "Link a post"
+msgstr "Lier un article"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\link-to-post/tinymce/posts.php:27
+msgid "Filter posts"
+msgstr "Filtrer les articles"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\link-to-post/tinymce/posts.php:41
+msgid "all categories"
+msgstr "toutes les catégories"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\link-to-post/tinymce/posts.php:62
+msgid "post"
+msgstr "article"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\link-to-post/tinymce/posts.php:65
+msgid "posts"
+msgstr "articles"
+
+#: C:\wamp\www\wordpress\wp-content\plugins\link-to-post/tinymce/posts.php:186
+msgid "No post"
+msgstr "Aucun article"
+
