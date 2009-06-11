@@ -15,9 +15,11 @@
 				// No selection and not in link
 				if (se.isCollapsed() && !ed.dom.getParent(se.getNode(), 'A'))
 					return;
-
+				var content = ed.selection.getContent();
+				var re=/(<\/?p)(?:\s[^>]*)?(>)|<[^>]*>/gi;
+				content = content.replace(re,'');				
 				ed.windowManager.open({
-					file : url + '/posts.php',
+					file : url + '/posts.php?validate=1&tri='+content + '&where=both&category=-1',
 					width : 600 + parseInt(ed.getLang('link2post.delta_width', 0)),
 					height : 550 + parseInt(ed.getLang('link2post.delta_height', 0)),
 					inline : 1
@@ -30,9 +32,11 @@
 				// No selection and not in link
 				if (se.isCollapsed() && !ed.dom.getParent(se.getNode(), 'A'))
 					return;
-
+				var content = ed.selection.getContent();
+				var re=/(<\/?p)(?:\s[^>]*)?(>)|<[^>]*>/gi;
+				content = content.replace(re,'');
 				ed.windowManager.open({
-					file : url + '/pages.php',
+					file : url + '/pages.php?validate=1&tri='+content + '&where=both',
 					width : 600 + parseInt(ed.getLang('link2post.delta_width', 0)),
 					height : 550 + parseInt(ed.getLang('link2post.delta_height', 0)),
 					inline : 1

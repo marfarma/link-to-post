@@ -1,4 +1,7 @@
-function insertPostLink(elem){
+tinyMCEPopup.requireLangPack();
+
+function insertPostLink(elem,nofollow){
+	elem = $(elem);
 	var ed = tinyMCEPopup.editor, dom = ed.dom, n = ed.selection.getNode();
 	e = dom.getParent(n, 'A');
 	if(e == null){
@@ -10,15 +13,31 @@ function insertPostLink(elem){
 			if (ed.dom.getAttrib(n, 'href') == '#mce_temp_url#') {
 				e = n;
 				ed.dom.setAttribs(e, {
-					href : elem.href
+					title : elem.text()
 				});
+				ed.dom.setAttribs(e, {
+					href : elem.attr('href')
+				});
+				if(nofollow == 'on'){
+					ed.dom.setAttribs(e, {
+						rel : 'nofollow'
+					});				
+				}
 			}
 		});
 	}
 	else{
 			ed.dom.setAttribs(e, {
-				href : elem.href
+				title : elem.text()
+			});
+			ed.dom.setAttribs(e, {
+				href : elem.attr('href')
 			});	
+			if(nofollow == 'on'){
+				ed.dom.setAttribs(e, {
+					rel : 'nofollow'
+				});				
+			}
 	}
 	tinyMCEPopup.close();
 	return false;
