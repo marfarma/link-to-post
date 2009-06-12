@@ -44,7 +44,7 @@ if(get_option('pl_select') == 'on' && $_REQUEST['validate'] == 1 && strlen($_REQ
 				</p>
 				<p id="validate">
 					<input type="submit" class="mceButton" name="validate" id="validate" value="{#link2post.search}" />
-					<?php if(strlen($_REQUEST['validate'])>1 || $bFirstAndSelect){ ?><a href="posts.php">{#link2post.cancel}</a><?php } ?>
+					<?php if(strlen($_REQUEST['tri'])>0 && (strlen($_REQUEST['validate'])>1 || $bFirstAndSelect)){ ?><a href="posts.php">{#link2post.cancel}</a><?php } ?>
 					<a href="javascript:hideFilter()">{#link2post.hide_filters}</a>
 				</p>
 			</form>
@@ -52,10 +52,12 @@ if(get_option('pl_select') == 'on' && $_REQUEST['validate'] == 1 && strlen($_REQ
 		<?php
 
 		function pages($nb,$nbpages,$page,$where = 'both',$tri = '',$category = -1){
+			global $bFirstAndSelect;
+			if(strlen($_REQUEST['validate'])>1 || $bFirstAndSelect)
+				$tri = $tri;
+			else $tri = '';
 			if(strlen($where)==0)
 				$where = 'both';
-			if(strlen($tri)==0)
-				$tri = '';
 			if(strlen($category)==0)
 				$category = -1;
 			echo '<p>';
@@ -170,7 +172,7 @@ if(get_option('pl_select') == 'on' && $_REQUEST['validate'] == 1 && strlen($_REQ
 			}
 			$result = $wpdb->get_results('SELECT COUNT( * ) AS num_posts FROM '.$wpdb->posts.$tables.' WHERE  post_type = "POST" '.$where.' AND post_status = "publish" ');
 			$nb = $result[0]->num_posts;
-			$number = 15;
+			$number = 2;
 			if(!isset($_GET['page'])){ $page = 1; }
 			$offset = $number * ($page-1);
 			$nbpages = ceil($nb/$number);

@@ -4,7 +4,7 @@ Plugin Name: Link to Post
 Plugin URI: http://www.ajcrea.com/plugins/wordpress/plugin-wordpress-lier-un-article-avec-link-to-post.html
 Author: Ajcrea
 Author URI: http://ajcrea.com
-Version: 0.3
+Version: 0.3.1
 */
 function adup_option($name,$value){
 	if(strlen($value)==0) $value = 'off';
