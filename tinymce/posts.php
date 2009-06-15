@@ -172,7 +172,7 @@ if(get_option('pl_select') == 'on' && $_REQUEST['validate'] == 1 && strlen($_REQ
 			}
 			$result = $wpdb->get_results('SELECT COUNT( * ) AS num_posts FROM '.$wpdb->posts.$tables.' WHERE  post_type = "POST" '.$where.' AND post_status = "publish" ');
 			$nb = $result[0]->num_posts;
-			$number = 2;
+			$number = 15;
 			if(!isset($_GET['page'])){ $page = 1; }
 			$offset = $number * ($page-1);
 			$nbpages = ceil($nb/$number);
