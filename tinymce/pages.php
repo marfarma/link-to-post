@@ -167,7 +167,7 @@ function pl_trim_excerpt($text) {
 		echo '<ul id="liens">';
 		foreach($posts as $post){
 			$GLOBALS['post'] = $post;
-			echo '<li><a href="'.get_permalink($post->ID).'" onclick="return insertPostLink(this,\''.$nofollow.'\')" title="'.pl_trim_excerpt($post->post_content).'">'.$post->post_title.'</a></li>';
+			echo '<li><a href="'.get_permalink($post->ID).'" onclick="return insertPostLink(this,\''.$nofollow.'\')" title="'.pl_trim_excerpt($post->post_content).'">'.get_the_title($post->ID).'</a></li>';
 		}
 		echo '</ul>';
 	}

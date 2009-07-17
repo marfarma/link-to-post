@@ -1,3 +1,9 @@
+div.wrapper_quicktag{	padding:5px;}
+div.wrapper_quicktag fieldset{ border:1px solid #DFDFDF;}
+div.wrapper_quicktag legend{ color:#2B6FCF;}
+div.wrapper_quicktag ul#liens{ list-style-type:disc; padding-left:40px;}
+div.wrapper_quicktag ul#liens li{ line-height:0.8em;}
+
 #fc p{
 	text-align:left;
 	overflow:hidden;

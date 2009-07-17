@@ -4,7 +4,7 @@ Plugin Name: Link to Post
 Plugin URI: http://www.ajcrea.com/plugins/wordpress/plugin-wordpress-lier-un-article-avec-link-to-post.html
 Author: Ajcrea
 Author URI: http://ajcrea.com
-Version: 0.3.2
+Version: 0.4
 */
 function adup_option($name,$value){
 	if(strlen($value)==0) $value = 'off';
@@ -46,6 +46,43 @@ function add_pl_tinymce_plugin($plugin_array) {
    return $plugin_array;
 }
 
+function pl_adminjavascript(){
+	?>
+	<script type="text/javascript" src="<?php bloginfo('wpurl'); ?>/wp-content/plugins/link-to-post/link2post.js"></script>
+	<script type="text/javascript">
+	//<![CDATA[
+	function edlinktopost() {
+		var content = getContentSelection(window);
+	   tb_show("<?php _e('Link a post','link2post'); ?>","<?php bloginfo('wpurl'); ?>/wp-content/plugins/link-to-post/posts.php?tri="+content+"&amp;validate=1&amp;where=both&amp;category=-1&amp;TB_iframe=true",false);
+	}
+	function edlinktopage() {
+		var content = getContentSelection(window);
+	   tb_show("<?php _e('Link a page','link2post'); ?>","<?php bloginfo('wpurl'); ?>/wp-content/plugins/link-to-post/pages.php?tri="+content+"&amp;validate=1&amp;where=both&amp;TB_iframe=true",false);
+	}
+	//]]>
+	</script>	
+	<?php
+}
+
+function pl_quicktags(){
+	$buttonshtml = '<input type="button" class="ed_button" onclick="edlinktopost(); return false;" title="' . __('Link a post','link2post') . '" value="' . __('Link a post','link2post') . '" />';
+	$buttonshtml .= '<input type="button" class="ed_button" onclick="edlinktopage(); return false;" title="' . __('Link a page','link2post') . '" value="' . __('Link a page','link2post') . '" />';
+	?>
+	<script type="text/javascript" charset="utf-8">
+	// <![CDATA[
+	   (function(){
+		  if (typeof jQuery === 'undefined') {
+			 return;
+		  }
+		  jQuery(document).ready(function(){
+			 jQuery("#ed_toolbar").append('<?php echo $buttonshtml; ?>');
+		  });
+	   }());
+	// ]]>
+	</script>
+	<?php
+}
+
 function pl_adminpage() {	
 	add_options_page('Link to post', 'Link to post', 8, __FILE__, 'pl_optionpage');	
 }
@@ -81,5 +118,8 @@ function pl_optionpage(){
  
 add_action('init', 'pl_init');
 add_action('admin_menu', 'pl_adminpage');
+add_action('admin_print_scripts','pl_adminjavascript');
+add_action( 'edit_form_advanced', 'pl_quicktags');
+add_action( 'edit_page_form', 'pl_quicktags');
 
 ?>
