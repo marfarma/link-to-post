@@ -2,14 +2,14 @@
 Contributors: Ajcrea
 Tags: page, post, tinymce,link
 Requires at least: 2.6
-Tested up to: 2.7.1
+Tested up to: 2.8.1
 Stable tag: trunk
 
 This plugin allows you to easily create a link to an existing article or page in another article or page
 
 == Description ==
 
-This plugin allows you to easily create a link to an existing article or page in another article or page. It adds two buttons to the tinymce editor, which list the existing articles and pages, with the possibility of filtering by content or category.
+This plugin allows you to easily create a link to an existing article or page in another article or page. It adds two buttons to the tinymce and the quicktags editors, which list the existing articles and pages, with the possibility of filtering by content or category.
 
 == Installation ==
 
