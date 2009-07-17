@@ -174,6 +174,7 @@ if(get_option('pl_select') == 'on' && $_REQUEST['validate'] == 1 && strlen($_REQ
 			$nb = $result[0]->num_posts;
 			$number = 15;
 			if(!isset($_GET['page'])){ $page = 1; }
+			else{ $page = $_GET['page']; }
 			$offset = $number * ($page-1);
 			$nbpages = ceil($nb/$number);
 			$posts = $wpdb->get_results('SELECT * FROM '.$wpdb->posts.$tables.' WHERE post_type = "POST" '.$where.' AND post_status = "publish" ORDER BY post_date desc LIMIT '.$offset.','.$number.'');

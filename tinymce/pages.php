@@ -159,6 +159,7 @@ function pl_trim_excerpt($text) {
 	$nb = $result[0]->num_posts;
 	$number = 15;
 	if(!isset($_GET['page'])){ $page = 1; }
+	else{ $page = $_GET['page']; }
 	$offset = $number * ($page-1);
 	$nbpages = ceil($nb/$number);
 	$posts = $wpdb->get_results('SELECT * FROM '.$wpdb->posts.' WHERE post_type="PAGE" '.$where.' AND post_status = "publish" ORDER BY post_date desc LIMIT '.$offset.','.$number.'');
