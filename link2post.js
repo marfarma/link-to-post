@@ -17,7 +17,7 @@ function getContentSelection(win){
 	return word;
 }
 
-function insertPostLink(elem,nofollow){
+function insertPostLink(elem,nofollow,shortcode){
 	elem = jQuery(elem);
 	var winder = window.top;	
 	var href,title,rel = '',text;
@@ -28,12 +28,18 @@ function insertPostLink(elem,nofollow){
 	else{
 		var text = word;
 	}
-	var href = elem.attr('href');
-	var title = elem.text();
-	if(nofollow == 'on'){
-		var rel = 'rel="nofollow"';
-	}	
-	var link = '<a href="'+href+'" title="'+title+'" '+rel+'>'+text+'</a>';	
+	if(shortcode == 'on'){
+		var id = elem.attr('id');
+		var link = '[link2post id="' + id + '"]' + text + '[/link2post]';
+	}
+	else{
+		var href = elem.attr('href');
+		var title = elem.text();
+		if(nofollow == 'on'){
+			var rel = 'rel="nofollow"';
+		}	
+		var link = '<a href="'+href+'" title="'+title+'" '+rel+'>'+text+'</a>';	
+	}
 
     winder.edInsertContent(winder.edCanvas, link);
 	winder.tb_remove();

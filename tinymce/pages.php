@@ -2,6 +2,7 @@
 require_once('../../../../wp-blog-header.php');
 global $wpdb;
 $nofollow = get_option('pl_nofollow');
+$shortcode = get_option('pl_shortcode');
 $bFirstAndSelect = 0;
 if(get_option('pl_select') == 'on' && $_REQUEST['validate'] == 1 && strlen($_REQUEST['tri'])>0)
 	$bFirstAndSelect = 1;
@@ -168,7 +169,10 @@ function pl_trim_excerpt($text) {
 		echo '<ul id="liens">';
 		foreach($posts as $post){
 			$GLOBALS['post'] = $post;
-			echo '<li><a href="'.get_permalink($post->ID).'" onclick="return insertPostLink(this,\''.$nofollow.'\')" title="'.pl_trim_excerpt($post->post_content).'">'.get_the_title($post->ID).'</a></li>';
+			$local_post_id = $post->ID;
+			$local_permalink = get_permalink($local_post_id);
+			$local_post_title = get_the_title($local_post_id);				
+			echo '<li><a href="'.$local_permalink.'" id="'.$local_post_id.'" onclick="return insertPostLink(this,\''.$nofollow.'\',\''.$shortcode.'\')" title="'.pl_trim_excerpt($post->post_content).'">'.$local_post_title.'</a></li>';
 		}
 		echo '</ul>';
 	}

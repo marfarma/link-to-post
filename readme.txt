@@ -1,8 +1,8 @@
 === Link to Post ===
-Contributors: Ajcrea
+Contributors: julienappert,Ajcrea
 Tags: page, post, tinymce,link
 Requires at least: 2.6
-Tested up to: 2.8.1
+Tested up to: 2.8.6
 Stable tag: trunk
 
 This plugin allows you to easily create a link to an existing article or page in another article or page
@@ -17,4 +17,15 @@ This plugin allows you to easily create a link to an existing article or page in
 2. unzip and upload 'link-to-post' directory to your '/wp-content/plugins' directory
 3. Go to the plugin management page and enable the plugin
 4. That's it !
+
+== Screenshots ==
+
+1. link to post backend
+2. link to post popup
+
+== Changelog ==
+
+= 0.5 =
+* links use html or shortcode
+* delete of excerpts in the popup in order to fix some bugs
 
