@@ -2,7 +2,7 @@
 Contributors: julienappert,Ajcrea
 Tags: page, post, tinymce,link
 Requires at least: 2.6
-Tested up to: 2.8.6
+Tested up to: 2.9
 Stable tag: trunk
 
 This plugin allows you to easily create a link to an existing article or page in another article or page
