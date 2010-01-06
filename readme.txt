@@ -1,4 +1,4 @@
-=== Link to Post ===
+﻿=== Link to Post ===
 Contributors: julienappert,Ajcrea
 Tags: page, post, tinymce,link
 Requires at least: 2.6
@@ -10,6 +10,13 @@ This plugin allows you to easily create a link to an existing article or page in
 == Description ==
 
 This plugin allows you to easily create a link to an existing article or page in another article or page. It adds two buttons to the tinymce and the quicktags editors, which list the existing articles and pages, with the possibility of filtering by content or category.
+
+Languages :
+
+* English (en_US)
+* Français (fr_FR)
+* Беларуская (be_BY) : [Fatcow](http://www.fatcow.com)
+* Polska (pl_PL) : [Edward Jaszke](http://poligonit.pl)
 
 == Installation ==
 
@@ -24,6 +31,9 @@ This plugin allows you to easily create a link to an existing article or page in
 2. link to post popup
 
 == Changelog ==
+
+= 0.5.1 =
+* Belarusian and Polish languages
 
 = 0.5 =
 * links use html or shortcode
