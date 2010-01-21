@@ -1,0 +1,23 @@
+tinyMCE.addI18n('de.link2post',{
+linkPost:"Einen Artikel verlinken",
+linkPage:"Eine Seite verlinken",
+link_a_page:"Eine Seite verlinken",
+show_filters:"Die Filter anzeigen",
+filter_pages:"Seiten filtern",
+content:"Inhalt:",
+in_title:"im Titel",
+in_content:"im Inhalt",
+in_both:"in Beidem",
+search:"Suchen",
+cancel:"Abbrechen",
+hide_filters:"Die Filter verbergen",
+page:"Seite",
+pages:"Seiten",
+no_page:"Keine Seite",
+link_a_post:"Einen Artikel verlinken",
+filter_posts:"Artikel filtern",
+all_categories:"Alle Kategorien",
+post:"Artikel",
+posts:"Artikel",
+no_post:"Keine Artikel"
+});

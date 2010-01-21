@@ -17,6 +17,8 @@ Languages :
 * Français (fr_FR)
 * Беларуская (be_BY) : [Fatcow](http://www.fatcow.com)
 * Polska (pl_PL) : [Edward Jaszke](http://poligonit.pl)
+* Deutsch (de_DE) : [Oliver C. Jung](http://yadayada.de)
+* Eesti (et_ET) : [Illimar](http://usaveebimajutus.com)
 
 == Installation ==
 
@@ -31,6 +33,9 @@ Languages :
 2. link to post popup
 
 == Changelog ==
+
+= 0.5.2 =
+* German and Estonian languages
 
 = 0.5.1 =
 * Belarusian and Polish languages
