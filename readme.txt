@@ -19,6 +19,7 @@ Languages :
 * Polska (pl_PL) : [Edward Jaszke](http://poligonit.pl)
 * Deutsch (de_DE) : [Oliver C. Jung](http://yadayada.de)
 * Eesti (et_ET) : [Illimar](http://usaveebimajutus.com)
+* Lietuviškai (lt_LT) : [Xawiers](http://xawiers.esu.as)
 
 == Installation ==
 
@@ -33,6 +34,9 @@ Languages :
 2. link to post popup
 
 == Changelog ==
+
+= 0.5.3 =
+* Lithuanian language
 
 = 0.5.2 =
 * German and Estonian languages

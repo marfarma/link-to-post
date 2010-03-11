@@ -4,7 +4,7 @@ Plugin Name: Link to Post
 Plugin URI: http://julienappert.com/developpements-wordpress/plugin-link-to-post
 Author: Julien Appert
 Author URI: http://julienappert.com
-Version: 0.5.2
+Version: 0.5.3
 Description: This plugin allows you to easily create a link to an existing article or page in another article or page.
 */
 
