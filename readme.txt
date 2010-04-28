@@ -20,6 +20,10 @@ Languages :
 * Deutsch (de_DE) : [Oliver C. Jung](http://yadayada.de)
 * Eesti (et_ET) : [Illimar](http://usaveebimajutus.com)
 * Lietuviškai (lt_LT) : [Xawiers](http://xawiers.esu.as)
+* Español (es_ES) : [Núria Ramoneda](http://www.tresxnou.cat)
+* Català (ca) : [Núria Ramoneda](http://www.tresxnou.cat)
+* Português (pt) : [André Mafei](http://www.andremafei.com)
+* Nederlands (nl_NL) : [Mmonk](http://www.mastermonk.com)
 
 == Installation ==
 
@@ -34,6 +38,9 @@ Languages :
 2. link to post popup
 
 == Changelog ==
+
+= 0.5.4 =
+* spanish, catalan, portuguese and dutch languages
 
 = 0.5.3 =
 * Lithuanian language
