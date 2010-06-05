@@ -1,23 +1,3 @@
 tinyMCE.addI18n('en.link2post',{
-linkPost:"Link to post",
-linkPage:"Link to page",
-link_a_page:"Link a page",
-show_filters:"Show the filters",
-filter_pages:"Filter pages",
-content:"Content:",
-in_title:"in title",
-in_content:"in content",
-in_both:"in both",
-search:"Search",
-cancel:"Cancel",
-hide_filters:"Hide the filters",
-page:"page",
-pages:"pages",
-no_page:"No page",
-link_a_post:"Link a post",
-filter_posts:"Filter posts",
-all_categories:"all categories",
-post:"post",
-posts:"posts",
-no_post:"No post"
+linkPost:"Link to post"
 });

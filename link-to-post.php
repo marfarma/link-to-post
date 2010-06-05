@@ -4,8 +4,8 @@ Plugin Name: Link to Post
 Plugin URI: http://julienappert.com/developpements-wordpress/plugin-link-to-post
 Author: Julien Appert
 Author URI: http://julienappert.com
-Version: 0.5.4
-Description: This plugin allows you to easily create a link to an existing article or page in another article or page.
+Version: 1.0
+Description: This plugin allows you to easily create a link to an existing article, page, category or tag.
 */
 
 class WPLinkToPost{
@@ -62,7 +62,7 @@ function shortcode_func($atts, $content = null) {
 	}
  
 	function register_button($buttons) {
-	   array_push($buttons, "separator", "post_link","page_link");
+	   array_push($buttons, "separator", "post_link");
 	   return $buttons;
 	}
  
@@ -72,17 +72,15 @@ function shortcode_func($atts, $content = null) {
 	}
 
 	function adminjavascript(){
+		$type = get_option('pl_defaultab');
+		if(!$type) $type = 'post';
 		?>
 		<script type="text/javascript" src="<?php bloginfo('wpurl'); ?>/wp-content/plugins/link-to-post/link2post.js"></script>
 		<script type="text/javascript">
 		//<![CDATA[
 		function edlinktopost() {
 			var content = getContentSelection(window);
-		   tb_show("<?php _e('Link a post','link2post'); ?>","<?php bloginfo('wpurl'); ?>/wp-content/plugins/link-to-post/posts.php?tri="+content+"&amp;validate=1&amp;where=both&amp;category=-1&amp;TB_iframe=true",false);
-		}
-		function edlinktopage() {
-			var content = getContentSelection(window);
-		   tb_show("<?php _e('Link a page','link2post'); ?>","<?php bloginfo('wpurl'); ?>/wp-content/plugins/link-to-post/pages.php?tri="+content+"&amp;validate=1&amp;where=both&amp;TB_iframe=true",false);
+		   tb_show("<?php _e('Link a post','link2post'); ?>","<?php bloginfo('wpurl'); ?>/wp-content/plugins/link-to-post/linktopost.php?type=<?php echo $type; ?>&amp;tri="+content+"&amp;validate=1&amp;where=both&amp;category=-1&amp;TB_iframe=true",false);
 		}
 		//]]>
 		</script>	
@@ -91,7 +89,6 @@ function shortcode_func($atts, $content = null) {
 
 	function quicktags(){
 		$buttonshtml = '<input type="button" class="ed_button" onclick="edlinktopost(); return false;" title="' . __('Link a post','link2post') . '" value="' . __('Link a post','link2post') . '" />';
-		$buttonshtml .= '<input type="button" class="ed_button" onclick="edlinktopage(); return false;" title="' . __('Link a page','link2post') . '" value="' . __('Link a page','link2post') . '" />';
 		?>
 		<script type="text/javascript" charset="utf-8">
 		// <![CDATA[
@@ -117,16 +114,27 @@ function shortcode_func($atts, $content = null) {
 			$this->option('pl_select',$_POST['select']);
 			$this->option('pl_nofollow',$_POST['nofollow']);
 			$this->option('pl_shortcode',$_POST['shortcode']);
+			$this->option('pl_defaultab',$_POST['defaultab']);
 		}
 		$select = get_option('pl_select');
 		$nofollow = get_option('pl_nofollow');
 		$shortcode = get_option('pl_shortcode');
+		$defaultab = get_option('pl_defaultab');
 		?>
 		<div class="wrap">
 			<h2><?php echo _e('Options of "Link to post"','link2post'); ?></h2>
 			
 			<h3><?php _e('Configuration','link2post'); ?></h3>
 				<form action="" method="post">
+					<p>
+						<label for="defaultab"><?php _e('Default tab','link2post'); ?></label>
+						<select name="defaultab" id="defaultab">
+							<option value="post" <?php if($defaultab == 'post') echo 'selected="selected"'; ?>><?php _e('post','link2post'); ?></option>
+							<option value="page" <?php if($defaultab == 'page') echo 'selected="selected"'; ?>><?php _e('page','link2post'); ?></option>
+							<option value="category" <?php if($defaultab == 'category') echo 'selected="selected"'; ?>><?php _e('category','link2post'); ?></option>
+							<option value="tag" <?php if($defaultab == 'tag') echo 'selected="selected"'; ?>><?php _e('tag','link2post'); ?></option>
+						</select>
+					</p>
 					<p>
 						<input type="checkbox" name="select" id="select" <?php if($select == 'on') echo 'checked="checked"'; ?>/>
 						<label for="select"><?php _e('Search with selected text','link2post'); ?></label>

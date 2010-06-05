@@ -1,23 +1,3 @@
 tinyMCE.addI18n('et.link2post',{
-linkPost:"Lingi postitusele",
-linkPage:"Lingi lehele",
-link_a_page:"Lingi lehele",
-show_filters:"Näita filtreid",
-filter_pages:"Filtreeri lehed",
-content:"Sisu:",
-in_title:"pealkirjas",
-in_content:"sisus",
-in_both:"mõlemas",
-search:"Otsi",
-cancel:"Tühista",
-hide_filters:"Peida filtrid",
-page:"leht",
-pages:"lehte",
-no_page:"Lehti ei ole",
-link_a_post:"Lingi postitusele",
-filter_posts:"Filtreeri postitused",
-all_categories:"kõik kategooriad",
-post:"postitus",
-posts:"postitust",
-no_post:"Postitusi ei ole"
+linkPost:"Lingi postitusele"
 });

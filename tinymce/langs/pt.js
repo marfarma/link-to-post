@@ -1,23 +1,3 @@
 tinyMCE.addI18n('pt.link2post',{
-linkPost:"Link para noticia (post)",
-linkPage:"Link para pagina",
-link_a_page:"Link para pagina",
-show_filters:"Exibir painel de Busca",
-filter_pages:"Buscar pagina",
-content:"Buscar por:<br>(sem acentos, ex: reuniao)",
-in_title:"no titulo",
-in_content:"no conteudo",
-in_both:"no conteudo e titulo",
-search:"Buscar",
-cancel:"Cancelar",
-hide_filters:"Ocultar painel de busca",
-page:"pagina",
-pages:"paginas",
-no_page:"Nenhuma pagina encontrada",
-link_a_post:"Link para noticia (post)",
-filter_posts:"Buscar noticia (post)",
-all_categories:"todas as categorias",
-post:"noticia (post)",
-posts:"noticias (posts)",
-no_post:"Nenhuma pagina encontrada"
+linkPost:"Link para noticia"
 });

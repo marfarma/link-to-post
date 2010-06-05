@@ -45,10 +45,10 @@ function insertPostLink(elem,nofollow,shortcode){
 	return false;
 }
 function showFilter(){
-	$('#showFilter').css('display','none');
-	$('#filter').css('display','block');
+	$('.showFilter').css('display','none');
+	$('.filter').css('display','block');
 }
 function hideFilter(){
-	$('#showFilter').css('display','block');
-	$('#filter').css('display','none');
+	$('.showFilter').css('display','block');
+	$('.filter').css('display','none');
 }
