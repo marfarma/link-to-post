@@ -6,11 +6,11 @@ $nofollow = get_option('pl_nofollow');
 $shortcode = get_option('pl_shortcode');
 $bFirstAndSelect = 0;
 
-$validate = htmlentities(sanitize_text_field($_REQUEST['validate']));
-$tri = htmlentities(sanitize_text_field($_REQUEST['tri']));
-$where = htmlentities(sanitize_text_field($_REQUEST['where']));
-$category = htmlentities(sanitize_text_field($_REQUEST['category']));
-$type = htmlentities(sanitize_text_field($_REQUEST['type']));
+$validate = htmlspecialchars(sanitize_text_field($_REQUEST['validate']), ENT_QUOTES);
+$tri = htmlspecialchars(sanitize_text_field($_REQUEST['tri']), ENT_QUOTES);
+$where = htmlspecialchars(sanitize_text_field($_REQUEST['where']), ENT_QUOTES);
+$category = htmlspecialchars(sanitize_text_field($_REQUEST['category']), ENT_QUOTES);
+$type = htmlspecialchars(sanitize_text_field($_REQUEST['type']), ENT_QUOTES);
 if(strlen($type) == 0){
 	$type = get_option('pl_defaultab'); 
 	if(!$type){

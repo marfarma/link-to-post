@@ -62,3 +62,5 @@ Languages :
 = 1.0.1 =
 * SQLi and XSS security holes fixed. Thanks to [Julio from Boiteaweb.fr](http://boiteaweb.fr).
 
+= 1.0.2 =
+* bug with no latin languages fixed.
