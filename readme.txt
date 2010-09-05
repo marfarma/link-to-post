@@ -60,5 +60,5 @@ Languages :
 * new types of contents : category and tag
 
 = 1.0.1 =
-* improves date security
+* SQLi and XSS security holes fixed. Thanks to [Julio from Boiteaweb.fr](http://boiteaweb.fr).
 
