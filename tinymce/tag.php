@@ -5,7 +5,7 @@
 		<input type="hidden" name="type" id="type" value="tag" />
 		<p>
 			<label for="tri"><?php _e('Content','link2post'); ?></label>
-			<input type="text" name="tri" id="tri" value="<?php if(strlen($validate)>1 || $bFirstAndSelect) echo $tri; ?>"/>
+			<input type="text" name="tri" id="tri" value="<?php if(strlen($validate)>1 || $bFirstAndSelect) echo stripslashes($tri); ?>"/>
 		</p>
 		<p id="validate">
 			<input type="submit" class="mceButton" name="validate" id="validate" value="<?php _e('Search','link2post'); ?>" />
@@ -24,12 +24,12 @@ if(strlen($validate)>1 || $bFirstAndSelect){
 			foreach($mots as $key=>$mot){
 				if($key == 0) $sql .= ' ( ';
 				else $sql .= ' AND ';
-				$sql .= ' name LIKE "%'.htmlentities($mot).'%" ';
+				$sql .= ' name LIKE "%'.WPLinkToPost::secure_sql($mot).'%" ';
 				if($key == count($mots) - 1) $sql .= ' ) ';
 			}
 		}
 		else
-			$sql = ' AND name LIKE "%'.htmlentities($tri).'%" ';		
+			$sql = ' AND name LIKE "%'.WPLinkToPost::secure_sql($tri).'%" ';		
 	}
 }
 

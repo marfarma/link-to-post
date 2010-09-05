@@ -2,7 +2,7 @@
 Contributors: julienappert,Ajcrea
 Tags: page, post, tinymce,link
 Requires at least: 2.6
-Tested up to: 3.0
+Tested up to: 3.0.1
 Stable tag: trunk
 
 This plugin permits you to easily create a link to an existing content of your site.
@@ -54,4 +54,11 @@ Languages :
 = 0.5 =
 * links use html or shortcode
 * delete of excerpts in the popup in order to fix some bugs
+
+= 1.0 =
+* one page for all contents
+* new types of contents : category and tag
+
+= 1.0.1 =
+* improves date security
 

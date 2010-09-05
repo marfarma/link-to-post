@@ -4,7 +4,7 @@ Plugin Name: Link to Post
 Plugin URI: http://julienappert.com/developpements-wordpress/plugin-link-to-post
 Author: Julien Appert
 Author URI: http://julienappert.com
-Version: 1.0
+Version: 1.0.1
 Description: This plugin allows you to easily create a link to an existing article, page, category or tag.
 */
 
@@ -20,15 +20,19 @@ class WPLinkToPost{
 		add_action( 'edit_page_form', array(&$this,'quicktags'));	
 		add_shortcode('link2post', array($this,'shortcode_func'));
 	}
+	
+	function secure_sql($sql){
+		return mysql_real_escape_string($sql);
+	}	
 
-function shortcode_func($atts, $content = null) {
-	$permalink = get_permalink($atts['id']);
-	$title = get_the_title($atts['id']);
-	$nofollow = get_option('pl_nofollow');
-	if($nofollow == 'on') $rel = ' rel="nofollow"';
-	else $rel = '';
-	return '<a href="'.$permalink.'" title="'.$title.'"'.$rel.'>'.$content.'</a>';
-}
+	function shortcode_func($atts, $content = null) {
+		$permalink = get_permalink($atts['id']);
+		$title = get_the_title($atts['id']);
+		$nofollow = get_option('pl_nofollow');
+		if($nofollow == 'on') $rel = ' rel="nofollow"';
+		else $rel = '';
+		return '<a href="'.$permalink.'" title="'.$title.'"'.$rel.'>'.$content.'</a>';
+	}
 	
 	
 	function option($name,$value){

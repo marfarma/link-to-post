@@ -5,7 +5,7 @@
 				<input type="hidden" name="type" id="type" value="post" />
 				<p>
 					<label for="tri"><?php _e('Content','link2post'); ?></label>
-					<input type="text" name="tri" id="tri" value="<?php if(strlen($validate)>1 || $bFirstAndSelect) echo $tri; ?>"/>
+					<input type="text" name="tri" id="tri" value="<?php if(strlen($validate)>1 || $bFirstAndSelect) echo stripslashes($tri); ?>"/>
 					<select name="where" id="where">
 						<option value="title" <?php if($where == 'title') echo 'selected="selected"'; ?>><?php _e('in title','link2post'); ?></option>
 						<option value="content" <?php if($where == 'content') echo 'selected="selected"'; ?>><?php _e('in content','link2post'); ?></option>
@@ -37,12 +37,12 @@ if(strlen($validate)>1 || $bFirstAndSelect){
 					foreach($mots as $key=>$mot){
 						if($key == 0) $sql .= ' ( ';
 						else $sql .= ' AND ';
-						$sql .= ' post_title LIKE "%'.htmlentities($mot).'%" ';
+						$sql .= ' post_title LIKE "%'.WPLinkToPost::secure_sql($mot).'%" ';
 						if($key == count($mots) - 1) $sql .= ' ) ';
 					}
 				}
 				else
-					$sql = ' AND post_title LIKE "%'.htmlentities($tri).'%" ';
+					$sql = ' AND post_title LIKE "%'.WPLinkToPost::secure_sql($tri).'%" ';
 				
 			break;
 			case 'content':
@@ -51,12 +51,12 @@ if(strlen($validate)>1 || $bFirstAndSelect){
 					foreach($mots as $key=>$mot){
 						if($key == 0) $sql .= ' ( ';
 						else $sql .= ' AND ';
-						$sql .= ' post_content LIKE "%'.htmlentities($mot).'%" ';
+						$sql .= ' post_content LIKE "%'.WPLinkToPost::secure_sql($mot).'%" ';
 						if($key == count($mots) - 1) $sql .= ' ) ';
 					}
 				}
 				else
-				$sql = ' AND post_content LIKE "%'.htmlentities($tri).'%" ';
+				$sql = ' AND post_content LIKE "%'.WPLinkToPost::secure_sql($tri).'%" ';
 			break;
 			case 'both':
 				if(count($mots)>1){
@@ -64,12 +64,12 @@ if(strlen($validate)>1 || $bFirstAndSelect){
 					foreach($mots as $key=>$mot){
 						if($key == 0) $sql .= ' ( ';
 						else $sql .= ' AND ';
-						$sql .= ' ( post_title LIKE "%'.htmlentities($mot).'%" OR post_content LIKE "%'.htmlentities($mot).'%" ) ';
+						$sql .= ' ( post_title LIKE "%'.WPLinkToPost::secure_sql($mot).'%" OR post_content LIKE "%'.WPLinkToPost::secure_sql($mot).'%" ) ';
 						if($key == count($mots) - 1) $sql .= ' ) ';
 					}
 				}
 				else
-				$sql = ' AND ( post_title LIKE "%'.htmlentities($tri).'%" OR post_content LIKE "%'.htmlentities($tri).'%" ) ';
+				$sql = ' AND ( post_title LIKE "%'.WPLinkToPost::secure_sql($tri).'%" OR post_content LIKE "%'.WPLinkToPost::secure_sql($tri).'%" ) ';
 			break;
 		}
 	}
@@ -79,7 +79,7 @@ if(strlen($validate)>1 || $bFirstAndSelect){
 		break;
 		default:
 			$tables = ', '.$wpdb->terms.' as t, '.$wpdb->term_taxonomy.' as tt,'.$wpdb->term_relationships.' as tr ';
-			$sql .= ' AND ID = object_id AND t.term_id = tt.term_id AND t.term_id = '.$category.' AND tt.term_taxonomy_id = tr.term_taxonomy_id ';
+			$sql .= ' AND ID = object_id AND t.term_id = tt.term_id AND t.term_id = "'.WPLinkToPost::secure_sql($category).'" AND tt.term_taxonomy_id = tr.term_taxonomy_id ';
 	}
 }
 $result = $wpdb->get_results('SELECT COUNT( * ) AS num_posts FROM '.$wpdb->posts.$tables.' WHERE  post_type = "POST" '.$sql.' AND post_status = "publish" ');
